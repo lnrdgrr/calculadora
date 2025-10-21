@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Production Fee Calculator</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ZvpUoO/+PpZG9zH5yF2g5uHgbIIj7jD4gxLwJr5vVxiFwFxZp5Nyt5Vxk+29wzC8X" crossorigin="anonymous">
+    <style>
+        body {
+            padding-top: 30px;
+        }
+        .calculator-container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .output-section {
+            margin-top: 30px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="calculator-container">
+        <h2 class="text-center">Video Production Fee Calculator</h2>
+        <form id="calculatorForm">
+            <!-- Input for Video Duration and Complexity -->
+            <div class="mb-3">
+                <label for="videoDuration" class="form-label">Video Duration (in minutes):</label>
+                <input type="number" class="form-control" id="videoDuration" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="numVideos" class="form-label">Number of Videos:</label>
+                <input type="number" class="form-control" id="numVideos" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="videoType" class="form-label">Video Type:</label>
+                <select class="form-select" id="videoType" required>
+                    <option value="planning-intensive">Planning-Intensive (Video-Classes, Web-Series, Podcasts)</option>
+                    <option value="production-heavy">Production-Heavy (Video-Casts, Teasers, Narrative-Based Web-Series)</option>
+                    <option value="post-production-heavy">Post-Production-Heavy (AI-Based Podcasts, Animations, Motion Design)</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="complexity" class="form-label">Complexity:</label>
+                <select class="form-select" id="complexity" required>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="clientBaseFee" class="form-label">Does the client have a base fee?</label>
+                <select class="form-select" id="clientBaseFee" required>
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Calculate</button>
+        </form>
+
+        <!-- Output Section -->
+        <div id="output" class="output-section d-none">
+            <p id="totalCost">Total Estimated Cost: R$ 0</p>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and JS for Calculation -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="calculator.js"></script>
+
+</body>
+</html>
